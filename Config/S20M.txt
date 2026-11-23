@@ -1,0 +1,31 @@
+#设备平台
+CONFIG_TARGET_mediatek=y
+CONFIG_TARGET_mediatek_filogic=y
+#设备列表：仅超能网关 S20M
+CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_supergateway_s20m=y
+#WIFI驱动
+CONFIG_TARGET_DEVICE_PACKAGES_mediatek_filogic_DEVICE_supergateway_s20m="-kmod-mt76 -kmod-mt76-connac -kmod-mt76-core -kmod-mt7915e -kmod-mt7915-firmware -kmod-mt7916-firmware -kmod-mt7986-firmware -mt7986-wo-firmware"
+#内核调整
+CONFIG_PACKAGE_kmod-cryptodev=y
+CONFIG_PACKAGE_kmod-tls=y
+CONFIG_PACKAGE_kmod-oaf=y
+#插件调整
+CONFIG_PACKAGE_luci-app-axonhub=y
+#iKoolProxy 编译进固件（含完整运行依赖）
+CONFIG_PACKAGE_luci-app-ikoolproxy=y
+CONFIG_PACKAGE_koolproxy=y
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_kmod-ipset=y
+CONFIG_PACKAGE_iptables-mod-nat-extra=y
+CONFIG_PACKAGE_kmod-ipt-nat-extra=y
+CONFIG_PACKAGE_dnsmasq-full=y
+CONFIG_PACKAGE_dnsmasq=n
+CONFIG_PACKAGE_diffutils=y
+CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_ca-bundle=y
+CONFIG_PACKAGE_ca-certificates=y
+CONFIG_PACKAGE_libustream-openssl=y
+CONFIG_PACKAGE_openssl-util=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_luci-compat=y
+CONFIG_PACKAGE_luci-lua-runtime=y
