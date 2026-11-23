@@ -1,0 +1,31 @@
+# 单设备（超能网关 S20M）+ iKoolProxy 定制固件
+name: S20M-IKOOLPROXY
+
+on:
+  workflow_dispatch:
+    inputs:
+      TEST:
+        description: '仅输出配置文件，不编译固件'
+        default: false
+        required: false
+        type: boolean
+
+permissions: write-all
+
+jobs:
+  s20m:
+    name: supergateway_s20m-ikoolproxy
+    uses: ./.github/workflows/WRT-CORE.yml
+    with:
+      WRT_CONFIG: S20M
+      WRT_THEME: vantage
+      WRT_NAME: OWRT
+      WRT_SSID: OWRT
+      WRT_WORD: 12345678
+      WRT_IP: 192.168.10.1
+      WRT_PW: 无
+      WRT_REPO: https://github.com/VIKINGYFY/immortalwrt.git
+      WRT_BRANCH: owrt
+      WRT_SOURCE: VIKINGYFY/immortalwrt
+      WRT_PACKAGE: ''
+      WRT_TEST: ${{ inputs.TEST || false }}
