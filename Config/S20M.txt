@@ -16,8 +16,13 @@ CONFIG_PACKAGE_luci-app-ikoolproxy=y
 CONFIG_PACKAGE_koolproxy=y
 CONFIG_PACKAGE_ipset=y
 CONFIG_PACKAGE_kmod-ipset=y
+CONFIG_PACKAGE_kmod-ipt-ipset=y
 CONFIG_PACKAGE_iptables-mod-nat-extra=y
 CONFIG_PACKAGE_kmod-ipt-nat-extra=y
+CONFIG_PACKAGE_kmod-ipt-nat=y
+#关键：iptables 用户态程序（插件全靠它写 nat 规则；原版镜像里缺它导致完全不生效）
+CONFIG_PACKAGE_iptables-zz-legacy=y
+CONFIG_PACKAGE_ip6tables-zz-legacy=y
 CONFIG_PACKAGE_dnsmasq-full=y
 CONFIG_PACKAGE_dnsmasq=n
 CONFIG_PACKAGE_diffutils=y
